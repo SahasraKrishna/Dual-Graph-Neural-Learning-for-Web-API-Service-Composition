@@ -1,0 +1,20 @@
+1. Multi-layer aggregation + interaction  
+- This part is the core representation learning for mash ups and APIs. 
+- At each layer:  
+   --> Neighbor information is aggregated (like in a graph neural network).  
+   --> Mash up and API features are refined step by step.  
+2. API feature extraction from descriptions  
+- API descriptions (text) are first encoded using a pre-trained language model.  
+- Then passed through convolution layers (CNNs):  
+   --> These extract local semantic patterns (important phrases/features).  
+3. Tag-based graph information 
+- APIs are connected through shared tags (ATCG: API Tag Co-occurrence Graph). 
+- Tags are also embedded (via the same pre-trained language model).  
+- This creates another signal showing:  
+   --> Which APIs are semantically related via tags. 
+4. Prediction + training 
+- This is the final decision and learning step. 
+- Inputs:  
+   --> Mash up representation  
+   --> API representation  
+- A gating mechanism decides how much to rely on different features.  
